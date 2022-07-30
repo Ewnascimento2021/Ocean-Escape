@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class TrackCreator : MonoBehaviour
 {
     public PlayerJson json;
 
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
             json.Save();
 
-           // json.Load();
+           //json.Load();
             
         }
     }

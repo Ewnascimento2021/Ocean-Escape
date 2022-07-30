@@ -17,12 +17,12 @@ public class PlayerJson
         File.WriteAllText(path, content);
     }
 
-    //public void Load()
-    //{
-    //    var content = File.ReadAllText(path);
-    //    var p = JsonUtility.FromJson<PlayerJson>(content);
-    //    NotaTime = p.NotaTime;
-    //}
+    public void Load()
+    {
+        var content = File.ReadAllText(path);
+        var p = JsonUtility.FromJson<PlayerJson>(content);
+        NotaTime = p.NotaTime;
+    }
     public void AddNote(float noteTime)
     {
         NotaTime.Add(noteTime);
