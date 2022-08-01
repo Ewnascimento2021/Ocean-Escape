@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class NoteManager : MonoBehaviour
 {
+
+    static NoteManager instance;
+    public static NoteManager Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType<NoteManager>();
+            return instance;
+        }
+    }
     public PlayerJson json;
 
-    private float initialTime;
-
-    private int contador;
-
-    private float elapsedTime;
+    public float speed;
 
     [SerializeField]
-    private float speed;
+    private float delay;
 
     [SerializeField]
     private GameObject Nota;
@@ -31,32 +38,18 @@ public class NoteManager : MonoBehaviour
 
         ItalianAfternoon = json.NotaTime;
 
-        foreach (int i in ItalianAfternoon)
+        for(int i = 0; i < ItalianAfternoon.Count; i++)
         {
             SpawnNote(ItalianAfternoon[i]);
         }
+       
         song.Play();
-
-        initialTime = Time.time;
     }
 
     private void SpawnNote(float time)
     {
-        float distance = speed * time * 50  ;
+        float distance = speed * time * 50 + delay;
         Vector2 pos = new Vector2(distance, transform.position.y);
         Instantiate(Nota, pos, transform.rotation);
-        Debug.Log(pos);
-    }
-
-    private void FixedUpdate()
-    {
-        contador ++;
-        elapsedTime = Time.time - initialTime;
-        if (elapsedTime >= 1)
-        {
-            Debug.Log(contador);
-            initialTime = Time.time;
-            contador = 0;
-        }
     }
 }

@@ -7,9 +7,11 @@ using UnityEngine;
 [Serializable]
 public class PlayerJson
 {
+    public string songName;
+
     public List<float> NotaTime = new List<float>();
 
-    public string path = "Assets/Player.txt";
+    public string path = "Assets/" + "Musica2" + ".txt";
 
     public void Save()
     {

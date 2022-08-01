@@ -6,6 +6,9 @@ public class TrackCreator : MonoBehaviour
 {
     public PlayerJson json;
 
+    [SerializeField]
+    private string trackSongName;
+
     private float initialTime;
 
     private float elapsedTime;
@@ -14,9 +17,9 @@ public class TrackCreator : MonoBehaviour
     {
         json = new PlayerJson();
 
-        json.Save();
+        json.songName = trackSongName;
 
-        //json.Load();
+        json.Save();
 
         initialTime = Time.time;
     }
@@ -30,8 +33,6 @@ public class TrackCreator : MonoBehaviour
             json.AddNote (elapsedTime);
 
             json.Save();
-
-           //json.Load();
             
         }
     }

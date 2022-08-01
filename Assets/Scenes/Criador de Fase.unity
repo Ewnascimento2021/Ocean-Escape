@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 84355754}
   - component: {fileID: 84355756}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Creator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,6 +156,7 @@ MonoBehaviour:
   json:
     NotaTime: []
     path: Assets/Player.txt
+  songName: Robson
 --- !u!4 &84355755
 Transform:
   m_ObjectHideFlags: 0

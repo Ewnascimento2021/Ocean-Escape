@@ -253,7 +253,8 @@ MonoBehaviour:
   json:
     NotaTime: []
     path: Assets/Player.txt
-  speed: 0.3
+  speed: 0.25
+  delay: 4
   Nota: {fileID: 4316321497078405212, guid: 965c204e583508e4db79d8b9e0b51019, type: 3}
   song: {fileID: 1485052282}
 --- !u!82 &1485052282
