@@ -11,7 +11,7 @@ public class PlayerJson
 
     public List<float> NotaTime = new List<float>();
 
-    public string path = "Assets/" + "Musica2" + ".txt";
+    public string path = "Assets/Player.txt";
 
     public void Save()
     {
