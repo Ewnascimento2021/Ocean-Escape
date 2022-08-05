@@ -5,10 +5,9 @@ using UnityEngine;
 public class Base : MonoBehaviour
 {
     private bool isKeyPressed;
-    private int Live;
     void Start()
     {
-        Live = 3;
+
     }
 
     void Update()
@@ -17,22 +16,19 @@ public class Base : MonoBehaviour
         {
             isKeyPressed = true;
         }
+
+       
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (isKeyPressed)
+        if (isKeyPressed == true && other.CompareTag("Nota"))
         {
-            Destroy(other.gameObject);
-            Live += 1;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (!isKeyPressed)
-        {
-            Live -= 1;
+            {
+                Destroy(other.gameObject);
+                transform.localScale = new Vector2(3, 3);
+                isKeyPressed = false;
+            }
         }
     }
 }
