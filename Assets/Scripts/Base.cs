@@ -4,31 +4,40 @@ using UnityEngine;
 
 public class Base : MonoBehaviour
 {
-    private bool isKeyPressed;
-    void Start()
-    {
+    public bool isPressed;
+    private GameManager gm;
 
+    private void Start()
+    {
+        gm = GetComponent<GameManager>();
     }
 
-    void Update()
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (isPressed)
+        {
+            isPressed = false;
+            gm.ScoreUp();
+            Destroy(other.gameObject);
+        }
+    }
+    private void Update()
     {
         if (Input.GetButtonDown("Jump"))
         {
-            isKeyPressed = true;
-        }
-
-       
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (isKeyPressed == true && other.CompareTag("Nota"))
-        {
-            {
-                Destroy(other.gameObject);
-                transform.localScale = new Vector2(3, 3);
-                isKeyPressed = false;
-            }
+            isPressed = true;
         }
     }
+    //private void FixedUpdate()
+    //{
+    //    if (Input.GetButtonDown("Jump"))
+    //    { 
+    //        isPressed = true;
+    //    }
+    //    else
+    //    {
+    //        isPressed = false;
+    //    }
+    //}
 }
+

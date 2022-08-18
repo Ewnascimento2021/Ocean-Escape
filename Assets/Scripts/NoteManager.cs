@@ -49,7 +49,7 @@ public class NoteManager : MonoBehaviour
     private void SpawnNote(float time)
     {
         float distance = speed * time * 50 + delay;
-        Vector2 pos = new Vector2(distance, transform.position.y);
+        Vector2 pos = new Vector2(distance + transform.position.x, transform.position.y);
         Instantiate(Nota, pos, transform.rotation);
     }
 }
