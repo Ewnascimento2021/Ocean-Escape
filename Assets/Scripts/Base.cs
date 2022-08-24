@@ -5,19 +5,17 @@ using UnityEngine;
 public class Base : MonoBehaviour
 {
     public bool isPressed;
-    private GameManager gm;
+    [SerializeField]
+    private HUDController hc;
 
-    private void Start()
-    {
-        gm = GetComponent<GameManager>();
-    }
+  
 
     private void OnTriggerStay2D(Collider2D other)
     {
         if (isPressed)
         {
             isPressed = false;
-            gm.ScoreUp();
+            hc.ScoreUp();
             Destroy(other.gameObject);
         }
     }
@@ -28,16 +26,5 @@ public class Base : MonoBehaviour
             isPressed = true;
         }
     }
-    //private void FixedUpdate()
-    //{
-    //    if (Input.GetButtonDown("Jump"))
-    //    { 
-    //        isPressed = true;
-    //    }
-    //    else
-    //    {
-    //        isPressed = false;
-    //    }
-    //}
 }
 

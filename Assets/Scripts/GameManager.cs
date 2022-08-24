@@ -1,28 +1,42 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int gameScore;
-    public int noteValue;
-    [SerializeField]
-    private TMP_Text scoreText;
-    [SerializeField]
-    private Image[] hearts;
-    
-
-
-    void Update()
+    static GameManager instance;
+    public static GameManager Instance
     {
-
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType<GameManager>();
+            return instance;
+        }
     }
-    public void ScoreUp()
+
+    public bool isPaused;
+
+    [SerializeField]
+    private Button pauseButton;
+
+    private void Awake()
     {
-        gameScore += noteValue;
-        scoreText.text = "Score: " + gameScore.ToString();
-        hearts[2].gameObject.SetActive(true);
+        pauseButton.onClick.AddListener(Pause);
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        NoteManager.Instance.song.Pause();
+        isPaused = true;
+    }
+
+    public void Continue()
+    {
+        Time.timeScale = 1;
+        NoteManager.Instance.song.Play();
     }
 }

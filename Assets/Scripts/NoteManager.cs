@@ -27,8 +27,8 @@ public class NoteManager : MonoBehaviour
 
     private List<float> ItalianAfternoon = new List<float>();
 
-    [SerializeField]
-    private AudioSource song;
+  
+    public AudioSource song;
 
     void Start()
     {
