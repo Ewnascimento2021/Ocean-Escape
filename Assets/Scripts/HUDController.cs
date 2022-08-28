@@ -6,6 +6,17 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
+    static HUDController instance;
+    public static HUDController Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType<HUDController>();
+            return instance;
+        }
+    }
+
     public int gameScore;
     public int noteValue;
     [SerializeField]
