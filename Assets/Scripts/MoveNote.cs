@@ -19,6 +19,7 @@ public class MoveNote : MonoBehaviour
         {
             HUDController.Instance.ScoreUp();
             Destroy(gameObject);
+            
         }
     }
 

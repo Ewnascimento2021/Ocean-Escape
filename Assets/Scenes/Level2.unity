@@ -6495,6 +6495,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5108226523707626044, guid: 69737d4af08de0a4394dc37e7fccfadf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108226523707626044, guid: 69737d4af08de0a4394dc37e7fccfadf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108226523707626044, guid: 69737d4af08de0a4394dc37e7fccfadf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.18
       objectReference: {fileID: 0}
@@ -12493,7 +12501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1471955652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12506,6 +12514,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e494920f59de2b647a7cf9c27e0860fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  concha:
+  - {fileID: 21300000, guid: 9c9e1e663fc54604ca90cbc1ba316ab9, type: 3}
+  - {fileID: 21300000, guid: 035fe184a2998bd488b98cd04c3002ea, type: 3}
+  spriteConcha: {fileID: 1880389339}
   isPaused: 0
   pauseButton: {fileID: 474867130}
 --- !u!114 &1471955653
@@ -13754,6 +13766,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 280.38623, y: 100}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!212 &1880389339 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 384170481566591127, guid: 69737d4af08de0a4394dc37e7fccfadf, type: 3}
+  m_PrefabInstance: {fileID: 809704343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1954397591
 GameObject:
   m_ObjectHideFlags: 0
