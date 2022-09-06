@@ -36,6 +36,7 @@ public class MenuController : MonoBehaviour
     
     private void Awake()
     {
+        Time.timeScale = 1;
         telaMenu.SetActive(true);
         telaSelectLevel.SetActive(false);
 

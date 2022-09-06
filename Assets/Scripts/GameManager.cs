@@ -20,11 +20,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public bool isPaused;
-
-    [SerializeField]
-    private Button pauseButton;
-
     private void Start()
     {
         spriteConcha.sprite = concha[1];
@@ -34,25 +29,7 @@ public class GameManager : MonoBehaviour
     {
         Concha();
     }
-    private void Awake()
-    {
-        pauseButton.onClick.AddListener(Pause);
-    }
-
-    public void Pause()
-    {
-        Time.timeScale = 0;
-        NoteManager.Instance.song.Pause();
-        isPaused = true;
-
-    }
-
-    public void Continue()
-    {
-        Time.timeScale = 1;
-        NoteManager.Instance.song.Play();
-    }
-
+   
     private void Concha()
     {
         if (Input.GetKey(KeyCode.Space))
