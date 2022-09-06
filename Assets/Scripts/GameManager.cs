@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         NoteManager.Instance.song.Pause();
         isPaused = true;
+
     }
 
     public void Continue()

@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &38290188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e494920f59de2b647a7cf9c27e0860fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  concha:
+  - {fileID: 0}
+  - {fileID: 0}
+  spriteConcha: {fileID: 0}
   isPaused: 0
   pauseButton: {fileID: 203878748}
 --- !u!114 &38290189
