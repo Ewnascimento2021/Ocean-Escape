@@ -13457,6 +13457,14 @@ PrefabInstance:
       propertyPath: delay
       value: -4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1485052281, guid: 69737d4af08de0a4394dc37e7fccfadf, type: 3}
+      propertyPath: track
+      value: 
+      objectReference: {fileID: 11400000, guid: 40a228f9bad7e5e419a35cc2ea52a788, type: 2}
+    - target: {fileID: 1485052281, guid: 69737d4af08de0a4394dc37e7fccfadf, type: 3}
+      propertyPath: songName
+      value: Level1
+      objectReference: {fileID: 0}
     - target: {fileID: 2201521300781938944, guid: 69737d4af08de0a4394dc37e7fccfadf, type: 3}
       propertyPath: m_Name
       value: Base

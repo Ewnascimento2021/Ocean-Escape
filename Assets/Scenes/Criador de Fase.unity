@@ -150,11 +150,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 84355753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1b614633adbad3469c9e455510e4957, type: 3}
+  m_Script: {fileID: 11500000, guid: 9889a7790aba24346a7543a0ba9b1095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackSongName: Italian_Afternoon
-  trackData: {fileID: 11400000, guid: 40a228f9bad7e5e419a35cc2ea52a788, type: 2}
+  json:
+    songName: 
+    NotaTime: []
+    path: 
+  songName: Level2
 --- !u!4 &84355755
 Transform:
   m_ObjectHideFlags: 0
@@ -179,7 +182,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a1f95e6f1e094c94e80405fb996d8e02, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 44be989062d07e543b769bba237b4180, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
