@@ -132,8 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 84355755}
-  - component: {fileID: 84355754}
   - component: {fileID: 84355756}
+  - component: {fileID: 84355754}
   m_Layer: 0
   m_Name: Creator
   m_TagString: Untagged
@@ -154,9 +154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   json:
+    songName: 
     NotaTime: []
-    path: Assets/Player.txt
-  songName: Robson
+    path: 
+  songName: Level2
 --- !u!4 &84355755
 Transform:
   m_ObjectHideFlags: 0
@@ -181,7 +182,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a1f95e6f1e094c94e80405fb996d8e02, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 44be989062d07e543b769bba237b4180, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -11,8 +11,12 @@ public class PlayerJson
 
     public List<float> NotaTime = new List<float>();
 
-    public string path = "Assets/Fase1.txt";
+    public string path;
 
+    public void StartTrack()
+    {
+        path = "Assets/Tracks/" + songName + ".txt";
+    }
     public void Save()
     {
         var content = JsonUtility.ToJson(this, true);

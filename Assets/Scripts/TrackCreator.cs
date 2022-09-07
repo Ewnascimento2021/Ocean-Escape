@@ -4,37 +4,25 @@ using UnityEngine;
 
 public class TrackCreator : MonoBehaviour
 {
-    public PlayerJson json;
-
+    public PlayerJson json = new PlayerJson();
     [SerializeField]
-    private string trackSongName;
-
+    private string songName;
     private float initialTime;
-
     private float elapsedTime;
-
     void Start()
     {
-        json = new PlayerJson();
-
-        json.songName = trackSongName;
-
+        json.songName = songName;
+        json.StartTrack();
         json.Save();
-
         initialTime = Time.time;
     }
-
     private void Update()
     {
         if (Input.GetButtonDown("Jump"))
         {
             elapsedTime = Time.time - initialTime;
-
             json.AddNote (elapsedTime);
-
             json.Save();
-            
         }
     }
-  
 }

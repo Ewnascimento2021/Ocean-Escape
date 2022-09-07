@@ -15,41 +15,44 @@ public class NoteManager : MonoBehaviour
             return instance;
         }
     }
-    public PlayerJson json;
-
     public float speed;
+    public PlayerJson json = new PlayerJson();
 
     [SerializeField]
+    private string songName;
+    [SerializeField]
     private float delay;
-
     [SerializeField]
     private GameObject Nota;
 
-    private List<float> ItalianAfternoon = new List<float>();
+    private List<float> trackNoteList = new List<float>();
 
   
     public AudioSource song;
 
     void Start()
     {
-        json = new PlayerJson();
-
+        json.songName = songName;
+        json.StartTrack();
         json.Load();
 
-        ItalianAfternoon = json.NotaTime;
+        trackNoteList = json.NotaTime;
 
-        for(int i = 0; i < ItalianAfternoon.Count; i++)
+        for(int i = 0; i < trackNoteList.Count; i++)
         {
-            SpawnNote(ItalianAfternoon[i]);
+            SpawnNote(trackNoteList[i],i);
         }
        
         song.Play();
     }
 
-    private void SpawnNote(float time)
+    private void SpawnNote(float time, int count)
     {
         float distance = speed * time * 50 + delay;
         Vector2 pos = new Vector2(distance + transform.position.x, transform.position.y);
-        Instantiate(Nota, pos, transform.rotation);
+        GameObject novaNota = (Instantiate(Nota, pos, transform.rotation));
+#if UNITY_EDITOR
+        novaNota.name = count.ToString() + " - NOTA";
+#endif
     }
 }
