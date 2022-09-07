@@ -6,6 +6,17 @@ using UnityEngine.UI;
 
 public class PauseController : MonoBehaviour
 {
+    static PauseController instance;
+    public static PauseController Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType<PauseController>();
+            return instance;
+        }
+    }
+
     [SerializeField]
     private Button pauseButton;
     [SerializeField]
@@ -21,10 +32,8 @@ public class PauseController : MonoBehaviour
 
     [SerializeField]
     private GameObject pauseMenu;
-
     [SerializeField]
-    private GameObject pauseGameOver;
-
+    private GameObject menuGameOver;
     [SerializeField]
     private GameObject HUD;
 
@@ -32,7 +41,7 @@ public class PauseController : MonoBehaviour
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
-        pauseGameOver.SetActive(false);
+        menuGameOver.SetActive(false);
         HUD.SetActive(true);
 
         pauseButton.onClick.AddListener(Pause);
@@ -51,6 +60,16 @@ public class PauseController : MonoBehaviour
         restartGameOverButton.onClick.RemoveListener(Restart);
         exitPausetButton.onClick.RemoveListener(ExitToMenu);
         exitGameOverButton.onClick.RemoveListener(ExitToMenu);
+    }
+
+    public void GameOver()
+    {
+        menuGameOver.SetActive(true);
+        HUD.SetActive(false);
+        pauseMenu.SetActive(false);
+        //Teste de pause da tela
+        NoteManager.Instance.song.Pause();
+        Time.timeScale = 0;
     }
 
     private void Pause()

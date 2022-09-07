@@ -28,17 +28,24 @@ public class MenuController : MonoBehaviour
     private Button buttonLevelBonus;
 
     [SerializeField]
+    private Button buttonGameOver;
+
+    [SerializeField]
     private GameObject telaMenu;
 
     [SerializeField]
     private GameObject telaSelectLevel;
 
-    
+
+
+
+
     private void Awake()
     {
         Time.timeScale = 1;
         telaMenu.SetActive(true);
         telaSelectLevel.SetActive(false);
+
 
         startButton.onClick.AddListener(LevelSelect);
         exitButton.onClick.AddListener(ExitGame);
@@ -56,7 +63,8 @@ public class MenuController : MonoBehaviour
         startButton.onClick.RemoveListener(LevelSelect);
         exitButton.onClick.RemoveListener(ExitGame);
         returnMenu.onClick.RemoveListener(ReturnToMenu);
-       
+
+
         buttonLevel1.onClick.RemoveListener(Level1);
         buttonLevel2.onClick.RemoveListener(Level2);
         buttonLevel3.onClick.RemoveListener(Level3);
@@ -67,14 +75,15 @@ public class MenuController : MonoBehaviour
     {
         telaMenu.SetActive(false);
         telaSelectLevel.SetActive(true);
+
     }
 
     private void ReturnToMenu()
     {
         telaMenu.SetActive(true);
         telaSelectLevel.SetActive(false);
-    }
 
+    }
     private void Level1()
 
     {
@@ -98,8 +107,6 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene("LevelBonus");
     }
-
-
 
     private void ExitGame()
     {

@@ -17,9 +17,9 @@ public class MoveNote : MonoBehaviour
     {
         if (isInside && Input.GetKeyDown(KeyCode.Space))
         {
+            GameManager.Instance.sequenceHits++;
             HUDController.Instance.ScoreUp();
             Destroy(gameObject);
-            
         }
     }
 

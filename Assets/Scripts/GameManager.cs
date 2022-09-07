@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public Sprite[] concha = new Sprite[2];
     public SpriteRenderer spriteConcha;
 
+    public int sequenceHits = 7;
+    
+
     static GameManager instance;
     public static GameManager Instance
     {
@@ -41,4 +44,6 @@ public class GameManager : MonoBehaviour
             spriteConcha.sprite = concha[1];
         }
     }
+
+
 }

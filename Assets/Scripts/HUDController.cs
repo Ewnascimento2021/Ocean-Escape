@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HUDController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class HUDController : MonoBehaviour
     public int gameScore;
     public int noteValue;
 
+
     [SerializeField]
     private TMP_Text scoreText;
 
@@ -28,38 +30,39 @@ public class HUDController : MonoBehaviour
     [SerializeField]
     private Image imageStatus;
 
-    [SerializeField]
-    private Sprite[] life = new Sprite[3];
-    [SerializeField]
-    private Image imageLife;
-
-
-   
-
-
     private void Start()
     {
         imageStatus.sprite = status[1];
-        imageLife.sprite = life[2];
-        
+
     }
     void Update()
     {
         Status();
-
-        Life();
     }
     public void ScoreUp()
     {
         gameScore += noteValue;
         scoreText.text = "Score: \n" + gameScore.ToString();
     }
+
     private void Status()
     {
+        if (GameManager.Instance.sequenceHits > 10)
+        {
+            imageStatus.sprite = status[2];
+        }
+        else if (GameManager.Instance.sequenceHits > 5)
+        {
+            imageStatus.sprite = status[1];
+        }
 
-    }
-    private void Life()
-    {
-
+        else if (GameManager.Instance.sequenceHits >= 1)
+        {
+            imageStatus.sprite = status[0];
+        }
+        else
+        {
+            PauseController.Instance.GameOver();
+        }
     }
 }
