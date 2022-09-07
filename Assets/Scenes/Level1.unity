@@ -11260,6 +11260,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143623261}
   m_CullTransparentMesh: 1
+--- !u!1 &1149768354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2201521300781938944, guid: 69737d4af08de0a4394dc37e7fccfadf, type: 3}
+  m_PrefabInstance: {fileID: 5146718681790246479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1149768357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149768354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: facbd39d8a3bc824a914da83b7a007bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSomeNoteInside: 0
 --- !u!1 &1182848509
 GameObject:
   m_ObjectHideFlags: 0
@@ -12272,6 +12290,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9c9e1e663fc54604ca90cbc1ba316ab9, type: 3}
   - {fileID: 21300000, guid: 035fe184a2998bd488b98cd04c3002ea, type: 3}
   spriteConcha: {fileID: 874650375}
+  checkNotes: {fileID: 1149768357}
   sequenceHits: 7
 --- !u!114 &1420122650
 MonoBehaviour:

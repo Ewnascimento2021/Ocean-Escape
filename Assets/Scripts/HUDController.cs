@@ -56,13 +56,9 @@ public class HUDController : MonoBehaviour
             imageStatus.sprite = status[1];
         }
 
-        else if (GameManager.Instance.sequenceHits >= 1)
+        else if (GameManager.Instance.sequenceHits > 0)
         {
             imageStatus.sprite = status[0];
-        }
-        else
-        {
-            PauseController.Instance.GameOver();
         }
     }
 }

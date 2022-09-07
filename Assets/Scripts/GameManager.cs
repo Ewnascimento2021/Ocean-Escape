@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public Sprite[] concha = new Sprite[2];
     public SpriteRenderer spriteConcha;
+    [SerializeField]
+    private CheckNotes checkNotes;
 
     public int sequenceHits = 7;
     
@@ -31,6 +33,24 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         Concha();
+
+        if (!checkNotes.isSomeNoteInside && Input.GetKeyDown(KeyCode.Space)  )
+        {
+            if (GameManager.Instance.sequenceHits > 10)
+            {
+                GameManager.Instance.sequenceHits = 6;
+            }
+            else if (GameManager.Instance.sequenceHits > 5)
+            {
+                GameManager.Instance.sequenceHits = 1;
+            }
+            else
+            {
+                PauseController.Instance.GameOver();
+            }
+
+        }
+
     }
    
     private void Concha()
@@ -44,6 +64,7 @@ public class GameManager : MonoBehaviour
             spriteConcha.sprite = concha[1];
         }
     }
+
 
 
 }
