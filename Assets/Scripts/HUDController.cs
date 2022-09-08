@@ -21,7 +21,6 @@ public class HUDController : MonoBehaviour
     public int gameScore;
     public int noteValue;
 
-
     [SerializeField]
     private TMP_Text scoreText;
 
@@ -33,12 +32,13 @@ public class HUDController : MonoBehaviour
     private void Start()
     {
         imageStatus.sprite = status[1];
-
     }
+
     void Update()
     {
         Status();
     }
+
     public void ScoreUp()
     {
         gameScore += noteValue;
@@ -60,5 +60,10 @@ public class HUDController : MonoBehaviour
         {
             imageStatus.sprite = status[0];
         }
+    }
+
+    private void CongratulationScore()
+    {
+
     }
 }

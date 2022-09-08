@@ -15,6 +15,7 @@ public class NoteManager : MonoBehaviour
             return instance;
         }
     }
+
     public float speed;
     public PlayerJson json = new PlayerJson();
 
@@ -24,8 +25,11 @@ public class NoteManager : MonoBehaviour
     private float delay;
     [SerializeField]
     private GameObject Nota;
+    [SerializeField]
+    private GameObject Heart;
 
     private List<float> trackNoteList = new List<float>();
+
 
   
     public AudioSource song;
@@ -42,10 +46,11 @@ public class NoteManager : MonoBehaviour
         {
             SpawnNote(trackNoteList[i],i);
         }
+        SpawnHeart(trackNoteList[trackNoteList.Count -1] + 5);
        
         song.Play();
     }
-
+    
     private void SpawnNote(float time, int count)
     {
         float distance = speed * time * 50 + delay;
@@ -54,5 +59,11 @@ public class NoteManager : MonoBehaviour
 #if UNITY_EDITOR
         novaNota.name = count.ToString() + " - NOTA";
 #endif
+    }
+    private void SpawnHeart(float time)
+    {
+        float distance = speed * time * 50 + delay;
+        Vector2 pos = new Vector2(distance + transform.position.x, transform.position.y);
+        Instantiate(Heart, pos, transform.rotation);
     }
 }

@@ -1,0 +1,10 @@
+{
+    "songName": "LevelTESTE",
+    "NotaTime": [
+        0.9631010293960571,
+        1.7384631633758546,
+        2.4736382961273195,
+        3.2304444313049318
+    ],
+    "path": "Assets/Tracks/LevelTESTE.txt"
+}

@@ -44,13 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800dfcd2430e64943aaa1c3568b6f304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.43
   json:
     songName: 
     NotaTime: []
     path: Assets/Player.txt
-  speed: 0.43
-  delay: 4
+  songName: Level1
+  delay: -4.5
   Nota: {fileID: 4316321497078405212, guid: 965c204e583508e4db79d8b9e0b51019, type: 3}
+  Heart: {fileID: 2025498100481364127, guid: 64767b4b9c639dc4699ab4e369f5002e, type: 3}
   song: {fileID: 1485052282}
 --- !u!82 &1485052282
 AudioSource:
@@ -159,6 +161,8 @@ GameObject:
   - component: {fileID: 5108226523707626044}
   - component: {fileID: 384170481566591127}
   - component: {fileID: 1916107509}
+  - component: {fileID: 1149768357}
+  - component: {fileID: 4427158451828180562}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -248,3 +252,29 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.05}
   serializedVersion: 2
   m_Radius: 0.7
+--- !u!114 &1149768357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201521300781938944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: facbd39d8a3bc824a914da83b7a007bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSomeNoteInside: 0
+--- !u!114 &4427158451828180562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201521300781938944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: facbd39d8a3bc824a914da83b7a007bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSomeNoteInside: 0

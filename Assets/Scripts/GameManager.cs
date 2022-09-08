@@ -36,19 +36,11 @@ public class GameManager : MonoBehaviour
 
         if (!checkNotes.isSomeNoteInside && Input.GetKeyDown(KeyCode.Space)  )
         {
-            if (GameManager.Instance.sequenceHits > 10)
-            {
-                GameManager.Instance.sequenceHits = 6;
-            }
-            else if (GameManager.Instance.sequenceHits > 5)
-            {
-                GameManager.Instance.sequenceHits = 1;
-            }
-            else
-            {
-                PauseController.Instance.GameOver();
-            }
-
+            Miss();
+        }
+        if (sequenceHits > 15)
+        {
+            sequenceHits = 15;
         }
 
     }
@@ -65,6 +57,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Miss()
+    {
+        sequenceHits -= 1;
+        
+        if(sequenceHits < 1)
+        {
+            PauseController.Instance.GameOver();
+        }
+    }
 
 
 }
