@@ -6412,7 +6412,6 @@ MonoBehaviour:
   buttonLevel2: {fileID: 129460666}
   buttonLevel3: {fileID: 451660662}
   buttonLevelBonus: {fileID: 955068709}
-  buttonGameOver: {fileID: 0}
   telaMenu: {fileID: 1116303865}
   telaSelectLevel: {fileID: 1684778740}
 --- !u!1 &724922587

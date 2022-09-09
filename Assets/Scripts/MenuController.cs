@@ -28,9 +28,6 @@ public class MenuController : MonoBehaviour
     private Button buttonLevelBonus;
 
     [SerializeField]
-    private Button buttonGameOver;
-
-    [SerializeField]
     private GameObject telaMenu;
 
     [SerializeField]
