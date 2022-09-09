@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
         {
             sequenceHits = 15;
         }
-
     }
    
     private void Concha()

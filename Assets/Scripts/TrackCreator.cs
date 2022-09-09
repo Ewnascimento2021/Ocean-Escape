@@ -18,7 +18,7 @@ public class TrackCreator : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             elapsedTime = Time.time - initialTime;
             json.AddNote (elapsedTime);
